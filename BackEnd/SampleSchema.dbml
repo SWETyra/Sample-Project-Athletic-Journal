@@ -1,0 +1,19 @@
+Project athletic_journal_api {
+	database_type: 'PostgreSQL'
+
+  Note: '''
+    #Athletic Journal API DB
+
+  '''
+}
+Table Users {
+  id int [pk, increment]
+  first_name varchar(100) [not null]
+  last_name varchar(100) [not null]
+  email varchar(255) [not null, unique]
+  is_active boolean [not null, default: true]
+  created_time timestamp [default: `now()`, not null]
+  deleted_time timestamp [note: 'soft delete']
+
+}
+
